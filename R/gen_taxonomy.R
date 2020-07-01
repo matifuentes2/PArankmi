@@ -22,3 +22,4 @@ gen_taxonomy  <- function(df, birthdate_colname = "birthdate", output_colname = 
 
     ))
 }
+
