@@ -10,7 +10,18 @@ gen_taxonomy(
   output_colname = "generacion"
 )
 }
+\arguments{
+\item{df}{a data frame.}
+
+\item{output_colname}{string with the name which will contain the classification.}
+
+\item{birthdate}{string with the name of the df column that contains the birthdates.}
+}
 \description{
 This function allows you quickly classify people into generations based on their birthdate
 }
-\keyword{backslash}
+\examples{
+gen_taxonomy(base_personas)
+gen_taxonomy(base_personas, fecha_nacimiento,
+generation)
+}

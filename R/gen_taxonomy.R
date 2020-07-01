@@ -1,11 +1,15 @@
 #' gen_taxonomy Function
 #'
 #' This function allows you quickly classify people into generations based on their birthdate
-#' @keywords backslash
-#' @export
+#'
+#' @param df a data frame.
+#' @param birthdate string with the name of the df column that contains the birthdates.
+#' @param output_colname string with the name which will contain the classification.
 #' @examples
-
-
+#' gen_taxonomy(base_personas)
+#' gen_taxonomy(base_personas, fecha_nacimiento,
+#' generation)
+#' @export
 
 gen_taxonomy  <- function(df, birthdate_colname = "birthdate", output_colname = "generacion"){
 
