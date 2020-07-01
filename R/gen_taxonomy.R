@@ -13,9 +13,11 @@
 
 gen_taxonomy  <- function(df, birthdate_colname = "birthdate", output_colname = "generacion"){
 
-  if(!birthdate_colname %in% colnames(df)) stop("Your input column is not contained in the df. Please change your columns name or modify the parameter")
+  if(!birthdate_colname %in% colnames(df)) stop("Your input column is not contained in the df. Please change your column's name or modify the parameter birthdate_colname")
 
-  if(min(df %>% select(!!birthdate_colname) %>% .[[1]], na.rm = T) <= 1920) warning('One of your participants is an alien (was born before 1920)')
+  if(min(df %>% select(!!birthdate_colname) %>%
+         mutate(!!birthdate_colname := lubridate::year(rlang::UQ(rlang::sym(birthdate_colname)))) %>%
+         .[[1]], na.rm = T) <= 1920) warning('One of your participants is an alien (was born before 1920)')
 
   df %>%
     mutate(!!output_colname := case_when(lubridate::year(rlang::UQ(rlang::sym(birthdate_colname))) >= 1994 ~ "Generación Z",
