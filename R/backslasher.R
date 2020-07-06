@@ -13,4 +13,3 @@ backslasher <- function(){
   return(y)
 }
 
-backslasher()
