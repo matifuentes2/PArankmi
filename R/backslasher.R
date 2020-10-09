@@ -14,7 +14,9 @@ backslasher <- function(){
 
   x <- clipr::read_clip()
   y <- gsub("\\\\", "/", x)
+  write_clip(y)
   return(y)
 }
+
 
 
