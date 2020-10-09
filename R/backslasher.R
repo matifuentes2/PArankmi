@@ -8,7 +8,11 @@
 
 backslasher <- function(){
 
-  x <- readClipboard()
+  if(!require("clipr", character.only = TRUE)){
+    install.packages("clipr")
+  }
+
+  x <- clipr::read_clip()
   y <- gsub("\\\\", "/", x)
   return(y)
 }
