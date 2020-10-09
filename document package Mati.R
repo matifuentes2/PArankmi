@@ -1,4 +1,4 @@
-setwd("C:/Users/Matias Fuentes/Desktop/projects/PArankmi")
+setwd(here::here())
 devtools::document()
 setwd("..")
 devtools::install("PArankmi")
