@@ -36,7 +36,7 @@ ninebox(
 Models the distribution of the ninebox with the specified boundaries
 }
 \examples{
-ninebox(test, 90, 85, 100, 85, "desempeÃ±o ranco", "potencial ranco")
+ninebox(test, 90, 85, 100, 85, "desempeño ranco", "potencial ranco")
 ninebox(test2, 3, 1.5, 2, 1.5)
-ninebox(test3, 4, 2, 4, 2, "evaluaciÃ³n de desempeÃ±o", "evaluaciÃ³n de potencial", 0.1)
+ninebox(test3, 4, 2, 4, 2, "evaluación de desempeño", "evaluación de potencial", 0.1)
 }
