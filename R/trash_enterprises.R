@@ -1,6 +1,6 @@
 #' trash_enterprises Function
 #'
-#' Returns shitty enterprises from Rankmi Database (MANUELITA QUË ES ESA WEÁ BRO)
+#' Returns test enterprises from Rankmi Database (MANUELITA QUÉ ES ESA WEÁ BRO)
 #' @export
 
 trash_enterprises <- function(){
