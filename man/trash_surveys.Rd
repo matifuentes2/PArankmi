@@ -4,13 +4,34 @@
 \alias{trash_surveys}
 \title{trash_surveys Function}
 \usage{
-trash_surveys(df, var)
+trash_surveys(df = NULL, var, query = F)
 }
 \arguments{
 \item{df}{Data frame to filter}
 
 \item{var}{Name of the df var to filter as string}
+
+\item{query}{Boolean. Are you filtering inside the query?}
 }
 \description{
 Filters test surveys from Rankmi Database
+}
+\examples{
+
+# query = F
+trash_surveys(base, "title")
+
+# query = T
+DBI::dbGetQuery(con, glue::glue("select s.title
+from survey_dimensions sd
+left join dimensions d on d.id = sd.dimension_id
+left join surveys s on s.id = sd.survey_id
+left join enterprise_processes ep on ep.id = s.enterprise_process_id
+left join dimension_levels dl on dl.dimension_id = d.id
+where ep.rankmi_module_id = 3
+and d.dimension_type = 'item'
+and dl.evaluation_type_label_id is not null
+and s.survey_type = 0
+{trash_surveys(var = 's.title', query = T)}
+"))
 }

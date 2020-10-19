@@ -4,8 +4,32 @@
 \alias{trash_enterprises}
 \title{trash_enterprises Function}
 \usage{
-trash_enterprises()
+trash_enterprises(query = F)
+}
+\arguments{
+\item{query}{Boolean. Are you filtering inside the query?}
 }
 \description{
 Returns test enterprises from Rankmi Database (MANUELITA QUÉ ES ESA WEÁ BRO)
+}
+\examples{
+
+query = F
+base \%>\%
+filter(enterprise_name \%in\% PArankmi::trash_enterprises())
+
+#query = T
+base <- DBI::dbGetQuery(con, glue::glue("select s.title, e.name
+from survey_dimensions sd
+left join dimensions d on d.id = sd.dimension_id
+left join surveys s on s.id = sd.survey_id
+left join enterprise_processes ep on ep.id = s.enterprise_process_id
+left join dimension_levels dl on dl.dimension_id = d.id
+left join enterprises e on e.id = ep.enterprise_id
+where ep.rankmi_module_id = 3
+and d.dimension_type = 'item'
+and dl.evaluation_type_label_id is not null
+and s.survey_type = 0
+and e.name not in ({PArankmi::trash_enterprises(query = T)})
+"))
 }
