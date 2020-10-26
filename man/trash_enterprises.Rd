@@ -16,7 +16,7 @@ Returns test enterprises from Rankmi Database (MANUELITA QUÉ ES ESA WEÁ BRO)
 
 query = F
 base \%>\%
-filter(enterprise_name \%in\% PArankmi::trash_enterprises())
+filter(!enterprise_name \%in\% PArankmi::trash_enterprises())
 
 #query = T
 base <- DBI::dbGetQuery(con, glue::glue("select s.title, e.name
