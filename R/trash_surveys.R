@@ -28,7 +28,9 @@ trash_surveys <- function(df=NULL, var, query = F){
 
   omisiones <-   c("zergey","marian","test","piloto","prueba","archivar","copia",
                    "eliminar","demo","toma de","no func","malo","dado de baja"
-                   ,"carolina","clima danna","clima jesus")
+                   ,"carolina","clima danna","clima jesus","cierre","ficticio","desemp","tutorial","capacitac",
+                   "antiguo","carga","(old)","barómetro","con comentarios",
+                   "sin comentarios","malo","dado de baja","pulso")
 
 
   if(query == F){
