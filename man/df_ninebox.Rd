@@ -4,12 +4,14 @@
 \alias{df_ninebox}
 \title{df_ninebox Function}
 \usage{
-df_ninebox(process_id, connection = con)
+df_ninebox(process_id, connection = con, omit_areas = NULL)
 }
 \arguments{
 \item{process_id}{The id of a process that features desempeño y potencial xd}
 
 \item{connection}{Name of the connection to the database}
+
+\item{omit_areas}{Character vector with areas to omit}
 }
 \description{
 Downloads and prepares the data required to run the ninebox function
