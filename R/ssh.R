@@ -10,7 +10,7 @@ ssh <- function(os = "linux",
 
   if(os == "windows"){
 
-    shell(glue::glue("START ssh -i C:/Users/matif/OneDrive/Documents/Credentials/rankmi_office.pem -L 5556:rankmi-prod-cluster.cluster-ro-crtmr3w7usfm.us-west-2.rds.amazonaws.com:5432 -p 2233 ubuntu@54.148.6.196"))
+    shell(glue::glue("START ssh -i {location} -L 5556:rankmi-prod-cluster.cluster-ro-crtmr3w7usfm.us-west-2.rds.amazonaws.com:5432 -p 2233 ubuntu@54.148.6.196"))
 
   }
 
@@ -22,7 +22,6 @@ ssh <- function(os = "linux",
   }
 
 }
-
 
 
 
